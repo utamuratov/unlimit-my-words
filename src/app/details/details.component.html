@@ -1,0 +1,27 @@
+<article>
+  <img
+    [src]="word?.photo"
+    class="word-photo"
+    alt="Photo of {{ word?.newWord }}"
+  />
+  <section class="word-details">
+    <h2 class="word-details__new-word">{{ word?.newWord }}</h2>
+    <p class="word-details__translation">{{ word?.translation }}</p>
+
+    <h2 class="word-details__example-title">Misol gap</h2>
+    <p class="word-details__example">{{ word?.example }}</p>
+  </section>
+
+  <section class="leave-comment">
+    <h2>Kamentariya qoldirish</h2>
+    <form [formGroup]="form" (submit)="submitComment()">
+      <label for="name">FIO</label>
+      <input type="text" id="name" formControlName="name" />
+
+      <label for="comment">Kamentariya</label>
+      <input type="text" id="comment" formControlName="comment" />
+
+      <button type="submit">Yuborish</button>
+    </form>
+  </section>
+</article>

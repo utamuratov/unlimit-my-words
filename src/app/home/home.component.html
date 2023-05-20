@@ -1,0 +1,13 @@
+<section>
+  <form class="search">
+    <input type="text" placeholder="Ingilizcha so'zni qidiring" #filter />
+    <button type="button" (click)="filterWords(filter.value)">Qidirish</button>
+  </form>
+</section>
+<section class="words">
+  <app-word
+    [word]="word"
+    [routerLink]="['details', word.id]"
+    *ngFor="let word of filteredWords"
+  ></app-word>
+</section>
